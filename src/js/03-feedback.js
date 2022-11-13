@@ -24,9 +24,9 @@ function submitHandler(evt) {
   const form = evt.currentTarget;
   const formData = new FormData(form);
 
-  for (let [name, value] of formData) {
-    console.log(`${name} = ${value}`);
-  }
+  formData.forEach((value, key) => {
+    console.log(`${key} = ${value}`);
+  });
 
   form.reset();
   localStorage.removeItem(LS_FORM_KEY);
